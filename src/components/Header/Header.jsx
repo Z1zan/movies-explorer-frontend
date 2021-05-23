@@ -1,7 +1,11 @@
+import logo from '../../images/logo.svg';
 
 function Header() {
   return(
-    <div>Hello Header Component</div>
+    <header className='header'>
+      <img className='header__logo' src={logo} alt='Дипло' />
+
+    </header>
   )
 }
 export default Header;

@@ -17,43 +17,45 @@ import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
 function App() {
   return (
-    <Switch>
+      <div className="page">
+        <Switch>
 
-      <Route path='/profile'>
-        <Header/>
-        <Profile/>
-      </Route>
+          <Route path='/profile'>
+            <Header />
+            <Profile />
+          </Route>
 
-      <Route path='/signup'>
-        <Register/>
-      </Route>
+          <Route path='/signup'>
+            <Register />
+          </Route>
 
-      <Route path='/signin'>
-        <Login/>
-      </Route>
+          <Route path='/signin'>
+            <Login />
+          </Route>
 
-      <Route path='/saved-movies'>
-        <Header/>
-        <Navigation/>
-        <SavedMovies/>
-        <Footer/>
-      </Route>
+          <Route path='/saved-movies'>
+            <Header />
+            <Navigation />
+            <SavedMovies />
+            <Footer />
+          </Route>
 
-      <Route path='/movies'>
-        <Header/>
-        <Navigation/>
-        <Movies/>
-        <Footer/>
-      </Route>
+          <Route path='/movies'>
+            <Header />
+            <Navigation />
+            <Movies />
+            <Footer />
+          </Route>
 
-      <Route path='/'>
-        <Header/>
-        <Navigation/>
-        <Main/>
-        <Footer/>
-      </Route>
+          <Route path='/'>
+            <Header />
+            <Navigation />
+            <Main />
+            <Footer />
+          </Route>
 
-    </Switch>
+        </Switch>
+      </div>
   );
 }
 
