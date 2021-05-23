@@ -1,0 +1,60 @@
+import './App.css';
+import {BrowserRouter, Switch, Route, Redirect, useHistory} from 'react-router-dom';
+
+import Login from '../Login/Login';
+import Register from '../Register/Register';
+import Profile from '../Profile/Profile';
+
+import Header from '../Header/Header';
+import Navigation from '../Navigation/Navigation';
+import Main from '../Main/Main';
+import Movies from '../Movies/Movies';
+import SavedMovies from '../SavedMovies/SavedMovies';
+import Footer from '../Footer/Footer';
+
+
+import {CurrentUserContext} from "../../contexts/CurrentUserContext";
+
+function App() {
+  return (
+    <Switch>
+
+      <Route path='/profile'>
+        <Header/>
+        <Profile/>
+      </Route>
+
+      <Route path='/signup'>
+        <Register/>
+      </Route>
+
+      <Route path='/signin'>
+        <Login/>
+      </Route>
+
+      <Route path='/saved-movies'>
+        <Header/>
+        <Navigation/>
+        <SavedMovies/>
+        <Footer/>
+      </Route>
+
+      <Route path='/movies'>
+        <Header/>
+        <Navigation/>
+        <Movies/>
+        <Footer/>
+      </Route>
+
+      <Route path='/'>
+        <Header/>
+        <Navigation/>
+        <Main/>
+        <Footer/>
+      </Route>
+
+    </Switch>
+  );
+}
+
+export default App;
