@@ -1,0 +1,54 @@
+.aboutProject {
+    background: #202020;
+}
+
+.aboutProject__container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 110px 0;
+}
+
+.aboutProject__title {
+
+}
+
+.aboutProject__info {
+    display: flex;
+}
+
+.aboutProject__description {
+
+}
+
+.aboutProject__time-description {
+    display: flex;
+    margin-top: 110px;
+}
+
+.aboutProject__time-block {
+    min-height: 31px;
+    text-align: center;
+    width: 20%;
+}
+.aboutProject__time-block:last-child {
+    width: 80%;
+}
+
+.time-zone__time_backend {
+    background: #3DDC84;
+    color: #000;
+}
+
+.time-zone__time_frontend {
+    background: #303030;
+    color: #fff;
+}
+
+.time-zone__time {
+    padding: 9px 0;
+    margin-bottom: 14px;
+}
+
+.time-zone__title {
+    color: #8B8B8B;
+}

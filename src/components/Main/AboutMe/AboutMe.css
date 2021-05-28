@@ -1,0 +1,75 @@
+.aboutMe {
+    background: #202020;
+}
+
+.aboutMe__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 110px 0 100px;
+}
+
+.aboutMe__title {
+    margin-bottom: 66px;
+    width: 100%;
+}
+
+.aboutMe__info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.aboutMe__name {
+    font-size: 50px;
+    letter-spacing: -0.04em;
+    margin: 0 0 18px 0;
+}
+
+.aboutMe__description {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.aboutMe__story {
+    margin: 26px 0 0 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.aboutMe__socials {
+    display: flex;
+}
+
+.aboutMe__social {
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+.aboutMe__social:last-child {
+    margin-right: 0;
+}
+.aboutMe__social:hover {
+    color: #4285F4;
+    transition: color .3s ease;
+
+}
+
+.aboutMe__photo
+
+
+
+
+
+
+
+.aboutMe__photo {
+    border-radius: 10px;
+}

@@ -1,0 +1,23 @@
+.navTab {
+    text-align: center;
+    padding: 23px 0 25px;
+    background: #272727;
+}
+
+.navTab__link {
+    margin-right: 40px;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 13px;
+    color: #fff;
+    transition: all .2s ease;
+}
+
+.navTab__link:last-child {
+    margin-right: 0;
+}
+
+.navTab__link:hover {
+    transition: all .3s ease;
+    color: #4285F4;
+}

@@ -2,6 +2,8 @@
 
 .page {
   font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
   background: #202020;
   color: #fff;
 }

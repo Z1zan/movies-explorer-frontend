@@ -48,10 +48,13 @@ function App() {
           </Route>
 
           <Route path='/'>
-            <Header />
-            <Navigation />
-            <Main />
-            <Footer />
+            <section className='main'>
+              <Header />
+              <Navigation />
+              <Main />
+              <Footer />
+            </section>
+
           </Route>
 
         </Switch>
