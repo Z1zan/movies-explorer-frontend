@@ -154,11 +154,10 @@ form__label_password {
 }
 
 @media screen and (max-width: 768px) {
-  /* На макете есть данный отступ, но выглядит данный ход - так себе */
-  /*._form {*/
-  /*  padding: 232px 0;*/
-  /*  height: calc(100vh - 464px);*/
-  /*}*/
+  ._form {
+    padding: 232px 0;
+    height: calc(100vh - 464px);
+  }
 
   ._form-title {
     font-size: 24px;
