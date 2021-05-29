@@ -9,3 +9,10 @@
     padding-bottom: 23px;
     border-bottom: 1px solid #dadada;
 }
+
+@media screen and (max-width: 641px) {
+    ._title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

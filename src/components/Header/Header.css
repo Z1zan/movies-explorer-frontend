@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 0;
+    padding: 18px 70px;
 }
 
 .header__logo {
@@ -25,7 +25,7 @@
 }
 
 .header__container {
-
+    display: inherit;
 }
 
 .header__singup-btn {
@@ -55,5 +55,28 @@
     transition: all .3s ease;
     background: #4285F4;
     color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 30px 18px;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .header {
+        padding: 18px 14px;
+    }
+
+    .header-btn {
+        font-size: 10px;
+        line-height: 16px;
+        padding: 5px 12px;
+        margin-right: 2px;
+    }
+
+    .header-btn:hover {
+        transform: none;
+    }
 }
 

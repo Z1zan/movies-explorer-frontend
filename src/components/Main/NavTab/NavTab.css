@@ -1,6 +1,6 @@
 .navTab {
     text-align: center;
-    padding: 23px 0 25px;
+    padding: 23px 70px 25px;
     background: #272727;
 }
 
@@ -20,4 +20,21 @@
 .navTab__link:hover {
     transition: all .3s ease;
     color: #4285F4;
+}
+
+@media screen and (max-width: 768px) {
+    .navTab {
+        padding: 24px 50px;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .navTab {
+        padding: 25px 18px;
+    }
+
+    .navTab__link {
+        font-size: 11px;
+        line-height: 16px;
+    }
 }
