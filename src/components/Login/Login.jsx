@@ -5,7 +5,7 @@ function Login() {
   return(
     <div className='login _form'>
       <div className='signup__container'>
-        <div className='login__header'>
+        <div className='login__header _form__header'>
           <a className='login__logo _logo' href='/'>
             <img src={logo} alt='Диплом лого' />
           </a>

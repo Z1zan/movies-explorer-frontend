@@ -152,3 +152,51 @@ form__label_password {
   color: #fff;
   transition: color .3s ease;
 }
+
+@media screen and (max-width: 768px) {
+  /* На макете есть данный отступ, но выглядит данный ход - так себе */
+  /*._form {*/
+  /*  padding: 232px 0;*/
+  /*  height: calc(100vh - 464px);*/
+  /*}*/
+
+  ._form-title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media screen and (max-width: 641px) {
+  ._form {
+    padding: 56px 0 30px;
+    height: calc(100vh - 86px);
+    max-width: 260px;
+  }
+
+  ._form__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ._form-title {
+    margin: 50px 0 80px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .form__submit-btn {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .form__description {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .form__link {
+    margin-left: 7px;
+  }
+
+}

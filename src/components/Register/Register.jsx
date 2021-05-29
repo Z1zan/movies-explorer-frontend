@@ -5,7 +5,7 @@ function Register() {
   return(
     <div className='signup _form'>
       <div className='signup__container'>
-        <div className='signup__header'>
+        <div className='signup__header _form__header'>
           <a className='signup__logo _logo' href='/'>
             <img src={logo} alt='Диплом лого' />
           </a>
