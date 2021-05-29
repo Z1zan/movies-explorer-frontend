@@ -1,6 +1,8 @@
 import logo from '../../images/logo.svg';
 import './Header.css';
 
+import Navigation from '../Navigation/Navigation';
+
 function Header() {
   return(
     <header className='header'>
@@ -11,6 +13,7 @@ function Header() {
         <a className='header__singup-btn header-btn' href='/signup'>Регистрация</a>
         <a className='header__login-btn header-btn' href='/signin'>Войти</a>
       </div>
+      <Navigation />
     </header>
   )
 }

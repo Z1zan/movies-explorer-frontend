@@ -6,7 +6,6 @@ import Register from '../Register/Register';
 import Profile from '../Profile/Profile';
 
 import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
@@ -35,14 +34,12 @@ function App() {
 
           <Route path='/saved-movies'>
             <Header />
-            <Navigation />
             <SavedMovies />
             <Footer />
           </Route>
 
           <Route path='/movies'>
             <Header />
-            <Navigation />
             <Movies />
             <Footer />
           </Route>
@@ -50,7 +47,6 @@ function App() {
           <Route path='/'>
             <section className='main'>
               <Header />
-              <Navigation />
               <Main />
               <Footer />
             </section>
