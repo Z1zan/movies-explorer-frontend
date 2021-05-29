@@ -1,7 +1,13 @@
+import './Movies.css';
+import SearchForm from './SearchForm/SearchForm';
+import Preloader from './Preloader/Preloader';
 
 function Movies() {
   return(
-    <div>Hello Movies Component</div>
+    <div className='movies'>
+      <SearchForm />
+      <Preloader />
+    </div>
   )
 }
 export default Movies;
