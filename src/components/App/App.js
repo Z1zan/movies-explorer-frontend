@@ -20,7 +20,9 @@ function App() {
         <Switch>
 
           <Route path='/profile'>
-            <Header />
+            <Header
+              place='profile'
+            />
             <Profile />
           </Route>
 
@@ -33,20 +35,26 @@ function App() {
           </Route>
 
           <Route path='/saved-movies'>
-            <Header />
+            <Header
+              place='saved-movies'
+            />
             <SavedMovies />
             <Footer />
           </Route>
 
           <Route path='/movies'>
-            <Header />
+            <Header
+              place='movies'
+            />
             <Movies />
             <Footer />
           </Route>
 
           <Route path='/'>
-            <section className='main'>
-              <Header />
+            <section className='landing'>
+              <Header
+                place='landing'
+              />
               <Main />
               <Footer />
             </section>

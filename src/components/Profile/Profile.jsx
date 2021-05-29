@@ -5,12 +5,12 @@ function Profile() {
     <div className='profile'>
       <div className='profile__container'>
         <h1 className='profile__title'>
-          Привет, Виталий!
+          Привет, Иван!
         </h1>
         <div className='profile__inputs'>
           <div className='profile__input'>
             <p className='profile__label profile__label-name'>Имя</p>
-            <p className='profile__value profile__value-name'>Василий</p>
+            <p className='profile__value profile__value-name'>Иван</p>
           </div>
           <div className='profile__input'>
             <p className='profile__label profile__label-email'>E-mail</p>

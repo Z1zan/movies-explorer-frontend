@@ -40,6 +40,14 @@
     color: #fff;
 }
 
+._hideNav .navigation, ._hideNav .navMenu {
+    display: none;
+}
+
+._hideContainer .header__container {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .header {
         padding: 30px 18px;
