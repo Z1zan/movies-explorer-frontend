@@ -16,8 +16,8 @@ function AboutMe() {
             </p>
           </div>
           <div className='aboutMe__socials'>
-            <a href='#' className='aboutMe__social _fb'>Facebook</a>
-            <a href='#' className='aboutMe__social _github'>Github</a>
+            <a href='https://facebook.com/' className='aboutMe__social _fb'>Facebook</a>
+            <a href='https://github.com/' className='aboutMe__social _github'>Github</a>
           </div>
         </div>
         <div className='aboutMe__photo-container'>
