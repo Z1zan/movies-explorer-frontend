@@ -5,7 +5,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: calc(100vh - 242px);
     padding: 74px 0 70px;
 }
 
@@ -86,7 +85,6 @@
 @media screen and (max-width: 768px) {
     .profile {
         padding: 236px 0 269px;
-        height: calc(100vh - 603px);
     }
 
     .profile__inputs {
@@ -97,7 +95,6 @@
 @media screen and (max-width: 641px) {
     .profile {
         padding: 70px 0 40px;
-        height: calc(100vh - 184px);
         max-width: 260px;
     }
 
