@@ -11,62 +11,67 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Footer from '../Footer/Footer';
 
+import NotFound from '../NotFound/NotFound';
+
 
 import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
 function App() {
   return (
-      <div className="page">
-        <Switch>
+    <div className="page">
+      <Switch>
 
-          <Route path='/profile'>
+        <Route path='/profile'>
+          <Header
+            place='profile'
+          />
+          <Profile/>
+        </Route>
+
+        <Route path='/signup'>
+          <Register/>
+        </Route>
+
+        <Route path='/signin'>
+          <Login/>
+        </Route>
+
+        <Route path='/saved-movies'>
+          <Header
+            place='saved-movies'
+          />
+          <SavedMovies
+            place='saved-movies'
+          />
+          <Footer/>
+        </Route>
+
+        <Route path='/movies'>
+          <Header
+            place='movies'
+          />
+          <Movies
+            place='movies'
+          />
+          <Footer/>
+        </Route>
+
+        <Route exact path='/'>
+          <section className='landing'>
             <Header
-              place='profile'
+              place='landing'
             />
-            <Profile />
-          </Route>
+            <Main/>
+            <Footer/>
+          </section>
+        </Route>
 
-          <Route path='/signup'>
-            <Register />
-          </Route>
+        <Route path='*'>
+          <NotFound />
+        </Route>
 
-          <Route path='/signin'>
-            <Login />
-          </Route>
-
-          <Route path='/saved-movies'>
-            <Header
-              place='saved-movies'
-            />
-            <SavedMovies
-              place='saved-movies'
-            />
-            <Footer />
-          </Route>
-
-          <Route path='/movies'>
-            <Header
-              place='movies'
-            />
-            <Movies
-              place='movies'
-            />
-            <Footer />
-          </Route>
-
-          <Route path='/'>
-            <section className='landing'>
-              <Header
-                place='landing'
-              />
-              <Main />
-              <Footer />
-            </section>
-
-          </Route>
-
-        </Switch>
-      </div>
+      </Switch>
+    </div>
   );
 }
 
