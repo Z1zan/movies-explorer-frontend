@@ -4,9 +4,21 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 
 function MoviesCardList() {
   return(
-    <div className='movies-list'>
-      <MoviesCard />
-    </div>
+    <ul className='movies-list'>
+      <li>
+        <MoviesCard />
+      </li>
+      <li>
+        <MoviesCard />
+      </li>
+      <li>
+        <MoviesCard />
+      </li>
+      <li>
+        <MoviesCard />
+      </li>
+
+    </ul>
   )
 }
 export default MoviesCardList;

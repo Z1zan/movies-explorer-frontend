@@ -1,10 +1,6 @@
 .movieCard {
-    /*width: 364px;*/
-    width: calc(33.333% - 16px);
-    height: 271px;
     background: #222222;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
-    margin: 0 0 30px 0;
 }
 
 .movieCard__container {
@@ -39,6 +35,8 @@
     right: 14px;
     cursor: pointer;
     transition: all .2s ease;
+    border: none;
+    background-color: inherit;
 }
 
 .movieCard__favorite:hover {
@@ -58,20 +56,12 @@
 }
 
 @media screen and (max-width: 768px) {
-    .movieCard {
-        width: calc(50% - 15px);
-        height: 258px;
-    }
     .movieCard__img {
         height: 190px;
     }
 }
 
 @media screen and (max-width: 641px) {
-    .movieCard {
-        width: 100%;
-        height: 236px;
-    }
     .movieCard__img {
         height: 168px;
     }
