@@ -2,20 +2,28 @@ import './MoviesCardList.css';
 
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList() {
+function MoviesCardList({ place }) {
   return(
     <ul className='movies-list'>
       <li>
-        <MoviesCard />
+        <MoviesCard
+          place={place}
+        />
       </li>
       <li>
-        <MoviesCard />
+        <MoviesCard
+          place={place}
+        />
       </li>
       <li>
-        <MoviesCard />
+        <MoviesCard
+          place={place}
+        />
       </li>
       <li>
-        <MoviesCard />
+        <MoviesCard
+          place={place}
+        />
       </li>
 
     </ul>

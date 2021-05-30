@@ -38,7 +38,9 @@ function App() {
             <Header
               place='saved-movies'
             />
-            <SavedMovies />
+            <SavedMovies
+              place='saved-movies'
+            />
             <Footer />
           </Route>
 
@@ -46,7 +48,9 @@ function App() {
             <Header
               place='movies'
             />
-            <Movies />
+            <Movies
+              place='movies'
+            />
             <Footer />
           </Route>
 

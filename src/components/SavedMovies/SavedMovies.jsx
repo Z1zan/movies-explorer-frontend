@@ -1,7 +1,17 @@
+import SearchForm from "../SearchForm/SearchForm";
+import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function SavedMovies() {
-  return(
-    <div>Hello SavedMovies Component</div>
+import './SavedMovies.css';
+
+function SavedMovies({ place }) {
+  return (
+    <div className='savedMovies'>
+      <SearchForm />
+      <MoviesCardList
+        place={place}
+      />
+    </div>
   )
 }
+
 export default SavedMovies;

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import './MoviesCard.css';
 
-function MoviesCard() {
+function MoviesCard({ place }) {
 
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -15,9 +15,17 @@ function MoviesCard() {
       <div className='movieCard__container'>
         <h3 className='movieCard__title'>33 слова о дизайне</h3>
         <span className='movieCard__time'>1ч 47м</span>
-        <button type='checkbox' onClick={setFavoriteMovie}
-                className={`movieCard__favorite ${ isFavorite ? '_movieCard__favorite_active' : '' } `}
-        />
+        {
+          place === 'movies' &&
+          <button type='checkbox' onClick={setFavoriteMovie}
+            className={`movieCard__icon movieCard__favorite ${ isFavorite ? 'movieCard__favorite_active' : '' } `} />
+        }
+        {
+          place === 'saved-movies' &&
+          <button type='checkbox' onClick={setFavoriteMovie}
+            className={`movieCard__icon  movieCard__deleteIcon`} />
+        }
+
       </div>
       <img
         className='movieCard__img'

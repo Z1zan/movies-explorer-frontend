@@ -7,7 +7,9 @@ function Movies() {
   return(
     <div className='movies'>
       <SearchForm />
-      <MoviesCardList />
+      <MoviesCardList
+        place='movies'
+      />
       <Preloader />
     </div>
   )
