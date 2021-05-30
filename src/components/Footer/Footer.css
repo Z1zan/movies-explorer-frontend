@@ -62,10 +62,6 @@
 }
 
 @media screen and (max-width: 641px) {
-    .footer {
-        background: #272727;
-    }
-
     .footer__container {
         padding: 79px 10px 10px;
     }

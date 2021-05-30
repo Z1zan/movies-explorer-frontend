@@ -3,7 +3,7 @@ import './Teachs.css';
 function Teachs() {
   return(
     <div className='teachs'>
-      <div className='teachs__container'>
+      <div className='teachs__container' id='teachs'>
         <div className='teachs__title _title'>Технологии</div>
         <h2 className='teachs__subtitle'>7 технологий</h2>
         <p className='teachs__description'>

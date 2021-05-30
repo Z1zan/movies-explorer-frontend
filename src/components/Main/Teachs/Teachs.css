@@ -70,6 +70,10 @@
 }
 
 @media screen and (max-width: 641px) {
+    .teachs {
+        background: #202020;
+    }
+
     .teachs__container {
         padding: 70px 18px;
     }

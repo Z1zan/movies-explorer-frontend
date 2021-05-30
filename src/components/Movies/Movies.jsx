@@ -7,10 +7,15 @@ function Movies() {
   return(
     <div className='movies'>
       <SearchForm />
+      <Preloader />
       <MoviesCardList
         place='movies'
       />
-      <Preloader />
+
+      <div className='movies__btn-container'>
+        <button className='movies__more-btn' type='button'>Ещё</button>
+      </div>
+
     </div>
   )
 }
