@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Switch, Route, Redirect, useHistory} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Login from '../Login/Login';
 import Register from '../Register/Register';
@@ -12,9 +12,6 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Footer from '../Footer/Footer';
 
 import NotFound from '../NotFound/NotFound';
-
-
-import {CurrentUserContext} from "../../contexts/CurrentUserContext";
 
 function App() {
   return (
