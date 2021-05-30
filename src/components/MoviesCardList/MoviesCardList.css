@@ -1,5 +1,17 @@
 .movies-list {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 641px) {
+    .movies-list {
+        margin-top: 40px;
+    }
 }

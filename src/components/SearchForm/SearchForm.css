@@ -87,7 +87,7 @@
     width: 36px;
     height: 20px;
     background-color: #fff;
-    border: 1px solid #D9DADC;
+    border: 2px solid #D9DADC;
     border-radius: 20px;
     box-shadow: inset -20px 0 0 0 #fff;
     transition: all .2s ease;
@@ -97,13 +97,13 @@
 .checkBox__input:after {
     content: "";
     position: absolute;
-    top: 1px;
-    left: 1px;
+    top: 0;
+    left: 0;
     background: transparent;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 2px 0 6px rgba(0, 0, 0, .2);
     transition: all .2s ease;
 }
 
