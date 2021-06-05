@@ -109,6 +109,11 @@ code {
 
 }
 
+._unactive {
+  color: #424242 !important;
+  cursor: unset !important;
+}
+
 ._incorrect {
   color: #EE3465;
 }
