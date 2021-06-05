@@ -2,15 +2,21 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 import './SavedMovies.css';
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-function SavedMovies({ place }) {
+function SavedMovies(props) {
   return (
-    <div className='savedMovies'>
-      <SearchForm />
-      <MoviesCardList
-        place={place}
-      />
-    </div>
+    <>
+      <Header place={props.place} />
+      <div className='savedMovies'>
+        <SearchForm />
+        <MoviesCardList
+          place={props.place}
+        />
+      </div>
+      <Footer />
+    </>
   )
 }
 
