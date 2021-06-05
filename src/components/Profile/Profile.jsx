@@ -13,8 +13,8 @@ function Profile(props) {
   const [name, setName] = useState();
   const [emailError, setEmailError] = useState('');
   const [nameError, setNameError] = useState('');
-  const [emailValid, setEmailValid] = useState('false');
-  const [nameValid, setNameValid] = useState('false');
+  const [emailValid, setEmailValid] = useState(false);
+  const [nameValid, setNameValid] = useState(false);
 
   useEffect(() => {
     setEmail(currentUser.email);
@@ -92,7 +92,7 @@ function Profile(props) {
         </div>
         <div className='profile__buttons'>
           <button onClick={handleSubmit}  type='submit'
-                  className={ `profile__btn profile__edit-btn ${emailValid && nameValid ? '' : '_unactive'}`}
+                  className={ `profile__btn profile__edit-btn ${emailValid && nameValid ? '' : '_unactiveProfile'}`}
                   disabled={emailValid && nameValid ? false : true}
           >
             Редактировать
