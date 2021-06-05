@@ -92,7 +92,7 @@ function Profile(props) {
         </div>
         <div className='profile__buttons'>
           <button onClick={handleSubmit}  type='submit'
-                  className={ `profile__btn profile__edit-btn ${emailValid && nameValid ? '' : '_unactiveProfile'}`}
+                  className={ `profile__btn profile__edit-btn ${emailValid || nameValid ? '' : '_unactiveProfile'}`}
                   disabled={emailValid && nameValid ? false : true}
           >
             Редактировать
