@@ -37,6 +37,9 @@
 
 .navigation__btn_active {
     font-weight: 500;
+    border-color: #fff !important;
+    color: #fff !important;
+    filter: invert(63%) sepia(96%) saturate(314%) hue-rotate(93deg) brightness(149%) contrast(90%);
 }
 
 .navigation__movies-btn {

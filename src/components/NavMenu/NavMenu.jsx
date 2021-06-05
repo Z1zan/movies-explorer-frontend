@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import './NavMenu.css';
 import accountImg from '../../images/accountIcon.svg';
-import {Link} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 function NavMenu(
 ) {
@@ -27,13 +27,13 @@ function NavMenu(
         <button className='navMenu__close-btn' type='button' onClick={closeNavMenu}/>
         <ul className='navMenu__buttons'>
           <li className='navMenu__list'>
-            <Link to='/landing'>Главная</Link>
+            <NavLink activeClassName='_activePage' to='/landing'>Главная</NavLink>
           </li>
           <li className='navMenu__list'>
-            <Link className='_activePage' to='/movies'>Фильмы</Link>
+            <NavLink activeClassName='_activePage' to='/movies'>Фильмы</NavLink>
           </li>
           <li className='navMenu__list'>
-            <Link to='/saved-movies'>Сохранённые фильмы</Link>
+            <NavLink activeClassName='_activePage' to='/saved-movies'>Сохранённые фильмы</NavLink>
           </li>
         </ul>
         <Link className='navMenu__profile' to='/profile'>
