@@ -31,8 +31,8 @@ function App() {
   function handleRegister(item) {
     api
       .registration(item)
-      .then((data) => {
-        history.push('./signin');
+      .then(() => {
+        handleLogin(item);
       })
       .catch((err) => {
         console.log('Ошибка регистрации', err);
