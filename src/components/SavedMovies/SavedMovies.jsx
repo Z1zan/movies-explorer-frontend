@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 function SavedMovies(props) {
   return (
     <>
-      <Header place={props.place} />
+      <Header loggedIn={props.loggedIn} />
       <div className='savedMovies'>
         <SearchForm />
         <MoviesCardList

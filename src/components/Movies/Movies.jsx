@@ -10,7 +10,7 @@ function Movies(props) {
 
   return(
     <>
-      <Header place={props.place} />
+      <Header loggedIn={props.loggedIn} />
       <div className='movies'>
         <SearchForm />
         <Preloader />

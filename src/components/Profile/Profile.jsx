@@ -63,7 +63,7 @@ function Profile(props) {
 
   return (
     <>
-      <Header place={props.place}/>
+      <Header loggedIn={props.loggedIn}/>
       <div className='profile'>
         <div className='profile__container'>
           <h1 className='profile__title'>

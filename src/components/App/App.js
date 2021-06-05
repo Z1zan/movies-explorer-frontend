@@ -145,7 +145,7 @@ function App() {
           <Route path='/landing'>
             <section className='landing'>
               <Header
-                place='landing'
+                loggedIn={loggedIn}
               />
               <Main/>
               <Footer/>
