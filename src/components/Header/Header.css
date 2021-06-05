@@ -1,0 +1,73 @@
+.header {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 70px;
+}
+
+.header__container {
+    display: inherit;
+}
+
+.header__singup-btn {
+    margin-right: 10px;
+    background: inherit;
+    color: #fff;
+}
+
+.header__login-btn {
+    background: #3DDC84;
+    color: #000;
+}
+
+.header-btn {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: unset;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    text-decoration: none;
+}
+
+.header-btn:hover {
+    transform: scale(1.1);
+    transition: all .3s ease;
+    background: #4285F4;
+    color: #fff;
+}
+
+._hideNav .navigation, ._hideNav .navMenu {
+    display: none;
+}
+
+._hideContainer .header__container {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 30px 18px;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .header {
+        padding: 18px 14px;
+    }
+
+    .header-btn {
+        font-size: 10px;
+        line-height: 16px;
+        padding: 5px 12px;
+        margin-right: 2px;
+    }
+
+    .header-btn:hover {
+        transform: none;
+    }
+}
+

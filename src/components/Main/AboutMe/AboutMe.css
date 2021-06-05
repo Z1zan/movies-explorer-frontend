@@ -1,0 +1,145 @@
+.aboutMe {
+    background: #202020;
+}
+
+.aboutMe__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 110px 70px 100px;
+}
+
+.aboutMe__title {
+    margin-bottom: 66px;
+    width: 100%;
+}
+
+.aboutMe__info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.aboutMe__name {
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -0.04em;
+    margin: 0 0 18px 0;
+}
+
+.aboutMe__description {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.aboutMe__story {
+    margin: 26px 0 0 0;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.aboutMe__socials {
+    display: flex;
+}
+
+.aboutMe__social {
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+.aboutMe__social:last-child {
+    margin-right: 0;
+}
+.aboutMe__social:hover {
+    color: #4285F4;
+    transition: color .3s ease;
+
+}
+
+.aboutMe__photo {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 270px;
+    height: 327px;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutMe__container {
+        padding: 90px 50px 91px;
+    }
+
+    .aboutMe__info-container {
+        width: calc(60% - 40px);
+    }
+
+    .aboutMe__name {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 16px;
+    }
+
+    .aboutMe__description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .aboutMe__story {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .aboutMe__photo {
+        width: 255px;
+        height: 307px;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .aboutMe__container {
+        padding: 70px 14px;
+        justify-content: center;
+    }
+
+    .aboutMe__title {
+        margin-bottom: 60px;
+    }
+
+    .aboutMe__info-container {
+        order: 1;
+        width: 100%;
+    }
+
+    .aboutMe__photo{
+        width: 292px;
+        height: 352px;
+        margin-bottom: 40px;
+    }
+
+    .aboutMe__name {
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+
+    .aboutMe__description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .aboutMe__story {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .aboutMe__socials {
+        margin-top: 40px;
+    }
+}

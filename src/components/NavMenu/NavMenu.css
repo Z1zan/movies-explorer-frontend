@@ -1,0 +1,138 @@
+.navMenu {
+    display: none;
+}
+
+.navMenu__burger {
+    background-image: url('../../images/burger.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: inherit;
+}
+
+.navMenu__close-btn {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background-image: url('../../images/closeIcon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 22px;
+    height: 22px;
+    border: none;
+    background-color: inherit;
+}
+
+.navMenu__container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -100vw;
+    z-index: 2;
+    min-width: 520px;
+    background-color: #202020;
+    padding: 159px 0 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .5s cubic-bezier(0.63, 0.6, 0, 1.01);
+}
+
+.navMenu__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 1;
+}
+
+._open-navMenu {
+    display: flex;
+    right: 0;
+    transition: all .5s cubic-bezier(0, 0.82, 0.59, 1.02);
+}
+
+.navMenu__buttons {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navMenu__list {
+    margin-bottom: 28px;
+}
+
+.navMenu__list:last-child {
+    margin-bottom: 0;
+}
+
+.navMenu__list a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #fff;
+    transition: color .2s ease;
+}
+
+.navMenu__list a:hover {
+    color: #4285F4;
+    transition: color .3s ease;
+}
+
+.navMenu__profile {
+    border: 2px solid rgba(170, 170, 170, .2);
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .2s ease;
+    width: max-content;
+    margin-top: 50px;
+}
+
+.navMenu__profile:hover {
+    background: #3DDC84;
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+
+.navMenu__profile img {
+    margin-right: 7px;
+}
+
+._activePage {
+    padding-bottom: 4px;
+    border-bottom: solid 2px #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .navMenu {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 641px) {
+    .navMenu__container {
+        min-width: 100vw;
+    }
+
+    .navMenu__close-btn {
+        top: 13px;
+        right: 13px;
+    }
+}
