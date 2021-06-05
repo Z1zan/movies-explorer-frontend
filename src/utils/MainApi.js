@@ -87,8 +87,8 @@ class MainApi {
 }
 
 const api = new MainApi({
-  // baseUrl: 'https://api.biyele.nomoredomains.club',
-  baseUrl: 'http://localhost:3001',
+  baseUrl: 'https://api.biyele.nomoredomains.club',
+  // baseUrl: 'http://localhost:3001',
 })
 
 export default api;

@@ -28,6 +28,21 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const history = useHistory();
 
+  useEffect(() => {
+    if (localStorage.loggedIn === 'true') {
+      api
+        .getUserInfo()
+        .then((data) => {
+          setLoggedIn(true);
+          setCurrentUser(data);
+          history.push('./movies');
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    }
+  }, [])
+
   function handleRegister(item) {
     api
       .registration(item)
@@ -88,21 +103,6 @@ function App() {
       })
       .catch(err => console.log(err));
   }
-
-  useEffect(() => {
-    if (localStorage.loggedIn === 'true') {
-      api
-        .getUserInfo()
-        .then((data) => {
-          setLoggedIn(true);
-          setCurrentUser(data);
-          history.push('./profile');
-        })
-        .catch((err) => {
-          console.log('НЕ ЗАЛОГЕНЕН', err);
-        })
-    }
-  }, [])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
