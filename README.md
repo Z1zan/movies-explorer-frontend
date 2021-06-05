@@ -3,5 +3,5 @@
 ## Ссылка на Макет
 https://disk.yandex.ru/d/eGarKHWyXeK6Wg
 
-## Билд версия верстки
-http://biyele.nomoredomains.club/
+## Ссылка на сайт (front-end часть)
+https://biyele.nomoredomains.club/
