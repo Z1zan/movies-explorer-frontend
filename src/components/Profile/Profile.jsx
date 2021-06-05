@@ -73,8 +73,9 @@ function Profile(props) {
             <div className='profile__input'>
               <p className='profile__label profile__label-name'>Имя</p>
 
-              <input onChange={handleChangeName} value={name} className='profile__value profile__value-name' type='name'
-                     name='email'
+              <input onChange={handleChangeName} value={name}
+                     className='profile__value profile__value-name'
+                     type='name' name='email'
                      required='' minLength='2' maxLength='30' />
               <span className='form__error profile__error'>{nameError}</span>
 
@@ -82,8 +83,9 @@ function Profile(props) {
             <div className='profile__input'>
               <p className='profile__label profile__label-email'>E-mail</p>
 
-              <input onChange={handleChangeEmail} value={email} className='profile__value profile__value-email' type='email'
-                     name='email'
+              <input onChange={handleChangeEmail} value={email}
+                     className='profile__value profile__value-email'
+                     type='email' name='email'
                      required='' minLength='2' maxLength='30' />
               <span className='form__error profile__error'>{emailError}</span>
 
