@@ -12,10 +12,11 @@ import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
 import Footer from '../Footer/Footer';
 
-import ProtectedRoute from "../../utils/ProtectedRoute";
+import ProtectedRoute from '../../utils/ProtectedRoute';
 import NotFound from '../NotFound/NotFound';
 
-import api from "../../utils/MainApi";
+import api from '../../utils/MainApi';
+import apiMovies from '../../utils/MoviesApi';
 
 import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 
@@ -24,6 +25,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [userName, setUserName] = useState('');
+
+  const [movies, setMovies] = useState([]);
 
   const [currentUser, setCurrentUser] = useState({});
   const history = useHistory();
@@ -104,6 +107,19 @@ function App() {
       .catch(err => console.log(err));
   }
 
+  useEffect(() => {
+    if (localStorage.loggedIn === 'true') {
+      apiMovies
+        .getMovies()
+        .then((data) => {
+          setMovies(data);
+        })
+        .catch((err) => {
+          console.log('ошибка', err);
+        })
+    }
+  }, [])
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -132,6 +148,7 @@ function App() {
             loggedIn={loggedIn}
             component={Movies}
             place='movies'
+            movies={movies}
           />
 
           <Route path='/signup'>

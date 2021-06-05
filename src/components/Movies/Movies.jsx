@@ -1,10 +1,10 @@
 import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
-import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from './Preloader/Preloader';
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 function Movies(props) {
 
@@ -16,6 +16,7 @@ function Movies(props) {
         <Preloader />
         <MoviesCardList
           place={props.place}
+          movies={props.movies}
         />
 
         <div className='movies__btn-container'>

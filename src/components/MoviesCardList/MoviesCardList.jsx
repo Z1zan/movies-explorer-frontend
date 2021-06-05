@@ -2,31 +2,25 @@ import './MoviesCardList.css';
 
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList({ place }) {
-  return(
+function MoviesCardList(props) {
+  console.log(props.movies)
+  return (
     <ul className='movies-list'>
-      <li>
-        <MoviesCard
-          place={place}
-        />
-      </li>
-      <li>
-        <MoviesCard
-          place={place}
-        />
-      </li>
-      <li>
-        <MoviesCard
-          place={place}
-        />
-      </li>
-      <li>
-        <MoviesCard
-          place={place}
-        />
-      </li>
 
+      {props.movies.map((movie) => {
+        return (
+          <li>
+            <MoviesCard
+              movie={movie}
+              key={movie.id}
+              {...movie}
+              place={props.place}
+            />
+          </li>
+        )
+      })}
     </ul>
   )
 }
+
 export default MoviesCardList;
