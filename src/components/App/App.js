@@ -119,11 +119,6 @@ function App() {
             onChangeProfile={handleChangeProfile}
             handleSignOut={handleSignOut}
           />
-          {/*  <Header*/}
-          {/*    place='profile'*/}
-          {/*  />*/}
-          {/*  <Profile/>*/}
-          {/*</ProtectedRoute>*/}
 
           <ProtectedRoute
             path='/saved-movies'
@@ -131,14 +126,6 @@ function App() {
             component={SavedMovies}
             place='saved-movies'
           />
-          {/*  <Header*/}
-          {/*    place='saved-movies'*/}
-          {/*  />*/}
-          {/*  <SavedMovies*/}
-          {/*    place='saved-movies'*/}
-          {/*  />*/}
-          {/*  <Footer/>*/}
-          {/*</ProtectedRoute>*/}
 
           <ProtectedRoute
             path='/movies'
@@ -146,14 +133,6 @@ function App() {
             component={Movies}
             place='movies'
           />
-          {/*  <Header*/}
-          {/*    place='movies'*/}
-          {/*  />*/}
-          {/*  <Movies*/}
-          {/*    place='movies'*/}
-          {/*  />*/}
-          {/*  <Footer/>*/}
-          {/*</ProtectedRoute>*/}
 
           <Route path='/signup'>
             <Register onRegister={handleRegister}/>
