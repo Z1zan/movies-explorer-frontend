@@ -27,6 +27,7 @@ function App() {
   const [userName, setUserName] = useState('');
 
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
 
   const [currentUser, setCurrentUser] = useState({});
   const history = useHistory();
@@ -120,6 +121,30 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (localStorage.loggedIn === 'true') {
+      api
+        .getSavedMovies()
+        .then((data) => {
+          setSavedMovies(data.data);
+        })
+        .catch((err) => console.log(err))
+    }
+  }, [])
+
+  function handleSaveMovie(movie) {
+    console.log('mov', movie);
+    if (movie.nameRU !== savedMovies.some((item) => item.nameRU)) {
+      api
+        .saveMovie(movie)
+        .then((data) => {
+          console.log('hello');
+          setSavedMovies([data, ...data]);
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
@@ -141,6 +166,8 @@ function App() {
             loggedIn={loggedIn}
             component={SavedMovies}
             place='saved-movies'
+            savedMovies={savedMovies}
+            movies={movies}
           />
 
           <ProtectedRoute
@@ -149,6 +176,8 @@ function App() {
             component={Movies}
             place='movies'
             movies={movies}
+            savedMovies={savedMovies}
+            handleSaveMovie={handleSaveMovie}
           />
 
           <Route path='/signup'>

@@ -7,7 +7,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 function Movies(props) {
-
   return(
     <>
       <Header loggedIn={props.loggedIn} />
@@ -17,6 +16,8 @@ function Movies(props) {
         <MoviesCardList
           place={props.place}
           movies={props.movies}
+          savedMovies={props.savedMovies}
+          handleSaveMovie={props.handleSaveMovie}
         />
 
         <div className='movies__btn-container'>

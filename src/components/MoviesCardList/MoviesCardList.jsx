@@ -3,20 +3,32 @@ import './MoviesCardList.css';
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 function MoviesCardList(props) {
-  console.log(props.movies)
   return (
     <div className='movies-list'>
 
-      {props.movies.map((movie) => {
-        return (
+      { props.place === 'movies'
+          ? props.movies.map((movie) => {
+            return (
+                <MoviesCard
+                  movie={movie}
+                  key={movie.id}
+                  {...movie}
+                  place={props.place}
+                  handleSaveMovie={props.handleSaveMovie}
+                />
+            )
+          })
+        : props.savedMovies.map((savedMovie) => {
+          return (
             <MoviesCard
-              movie={movie}
-              key={movie.id}
-              {...movie}
+              movie={savedMovie}
+              key={savedMovie.id}
+              {...savedMovie}
               place={props.place}
-            />
-        )
-      })}
+              />
+          )
+        })
+      }
     </div>
   )
 }
