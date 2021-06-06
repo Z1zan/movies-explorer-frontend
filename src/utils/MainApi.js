@@ -97,7 +97,6 @@ class MainApi {
   }
 
   saveMovie(movie) {
-    console.log('api', movie);
     return fetch(`${this.baseUrl}/movies`, {
       method: 'POST',
       credentials: 'include',

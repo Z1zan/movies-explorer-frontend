@@ -15,6 +15,8 @@ function MoviesCardList(props) {
                   {...movie}
                   place={props.place}
                   handleSaveMovie={props.handleSaveMovie}
+                  savedMovies={props.savedMovies}
+                  deleteSavedMovie={props.deleteSavedMovie}
                 />
             )
           })
@@ -22,9 +24,11 @@ function MoviesCardList(props) {
           return (
             <MoviesCard
               movie={savedMovie}
-              key={savedMovie.id}
+              key={savedMovie.movieId}
               {...savedMovie}
               place={props.place}
+              savedMovies={props.savedMovies}
+              deleteSavedMovie={props.deleteSavedMovie}
               />
           )
         })

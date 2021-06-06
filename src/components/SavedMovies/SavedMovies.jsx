@@ -6,7 +6,6 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
 function SavedMovies(props) {
-  console.log('saved', props.movies);
   return (
     <>
       <Header loggedIn={props.loggedIn} />
@@ -16,6 +15,7 @@ function SavedMovies(props) {
           place={props.place}
           movies={props.movies}
           savedMovies={props.savedMovies}
+          deleteSavedMovie={props.deleteSavedMovie}
         />
       </div>
       <Footer />

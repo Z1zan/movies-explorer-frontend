@@ -16,12 +16,11 @@ function MoviesCard(props) {
   const movieApiUrl = 'https://api.nomoreparties.co'
   const emptyImg = 'https://images.unsplash.com/photo-1616530940355-351fabd9524b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80';
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const handleSetSavedMovie = props.savedMovies.some((item) => item.nameRU === props.nameRU);
 
   function setFavoriteMovie() {
-    setIsFavorite(!isFavorite);
 
-    if (isFavorite) {
+    if (handleSetSavedMovie) {
       return
     }
     const movie = {
@@ -41,6 +40,18 @@ function MoviesCard(props) {
     props.handleSaveMovie(movie);
   }
 
+
+  function handleDeleteMovie(e) {
+    e.preventDefault();
+    if (!props.movieId) {
+      const selectedMovie = props.savedMovies.find((item) => item.movieId === props.id);
+      props.deleteSavedMovie(selectedMovie._id);
+    } else {
+      const selectedMovie = props.savedMovies.find((item) => item.movieId === props.movieId);
+      props.deleteSavedMovie(selectedMovie._id);
+    }
+  }
+
   return (
     <div className='movieCard'>
       <div className='movieCard__container'>
@@ -48,17 +59,17 @@ function MoviesCard(props) {
         <span className='movieCard__time'>{timeConvert(props.duration)}</span>
         {
           props.place === 'movies' &&
-          <button type='checkbox' onClick={setFavoriteMovie}
-                  className={`movieCard__icon movieCard__favorite ${isFavorite ? 'movieCard__favorite_active' : ''} `}/>
+          <button type='checkbox' onClick={!handleSetSavedMovie ? setFavoriteMovie : handleDeleteMovie}
+                  className={`movieCard__icon movieCard__favorite ${handleSetSavedMovie ? 'movieCard__favorite_active' : ''} `}/>
         }
         {
           props.place === 'saved-movies' &&
-          <button type='checkbox'
+          <button type='checkbox' onClick={handleDeleteMovie}
                   className={`movieCard__icon  movieCard__deleteIcon`}/>
         }
 
       </div>
-      <a href={props.trailerLink}
+      <a href={props.trailerLink ? props.trailerLink : props.trailer}
          target="_blank"
          rel="noreferrer">
         <img

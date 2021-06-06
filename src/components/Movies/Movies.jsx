@@ -15,9 +15,11 @@ function Movies(props) {
         <Preloader />
         <MoviesCardList
           place={props.place}
-          movies={props.movies}
+          // movies={props.movies}
+          movies={props.localStorageMovies}
           savedMovies={props.savedMovies}
           handleSaveMovie={props.handleSaveMovie}
+          deleteSavedMovie={props.deleteSavedMovie}
         />
 
         <div className='movies__btn-container'>

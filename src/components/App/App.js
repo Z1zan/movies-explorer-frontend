@@ -28,6 +28,7 @@ function App() {
 
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
+  const localStorageMovies = JSON.parse(localStorage.getItem('movies'));
 
   const [currentUser, setCurrentUser] = useState({});
   const history = useHistory();
@@ -85,6 +86,7 @@ function App() {
     api
       .signOut()
       .then(() => {
+        localStorage.clear('movies');
         localStorage.setItem('loggedIn', 'false');
         setLoggedIn(false);
         history.push('./');
@@ -108,11 +110,13 @@ function App() {
       .catch(err => console.log(err));
   }
 
+// Получение всех фильмов
   useEffect(() => {
-    if (localStorage.loggedIn === 'true') {
+    if (localStorage.loggedIn === 'true' && !localStorage.movies) {
       apiMovies
         .getMovies()
         .then((data) => {
+          localStorage.setItem('movies', JSON.stringify(data))
           setMovies(data);
         })
         .catch((err) => {
@@ -120,30 +124,38 @@ function App() {
         })
     }
   }, [])
-
+// Получение сохранненых фильмов
   useEffect(() => {
     if (localStorage.loggedIn === 'true') {
       api
         .getSavedMovies()
-        .then((data) => {
-          setSavedMovies(data.data);
+        .then(({data}) => {
+          setSavedMovies(data);
         })
         .catch((err) => console.log(err))
     }
   }, [])
-
+//сохранение фильма
   function handleSaveMovie(movie) {
-    console.log('mov', movie);
     if (movie.nameRU !== savedMovies.some((item) => item.nameRU)) {
       api
         .saveMovie(movie)
-        .then((data) => {
-          console.log('hello');
-          setSavedMovies([data, ...data]);
+        .then(({data}) => {
+          setSavedMovies([data, ...savedMovies]);
         })
         .catch((err) => console.log(err));
     }
   }
+//удаление фильма из избраного
+  function deleteSavedMovie(movieId) {
+    api
+      .deleteMovie(movieId)
+      .then(() => {
+        const newSavedList = savedMovies.filter((item) => item._id !== movieId);
+        setSavedMovies(newSavedList);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -168,6 +180,7 @@ function App() {
             place='saved-movies'
             savedMovies={savedMovies}
             movies={movies}
+            deleteSavedMovie={deleteSavedMovie}
           />
 
           <ProtectedRoute
@@ -178,6 +191,8 @@ function App() {
             movies={movies}
             savedMovies={savedMovies}
             handleSaveMovie={handleSaveMovie}
+            deleteSavedMovie={deleteSavedMovie}
+            localStorageMovies={localStorageMovies}
           />
 
           <Route path='/signup'>
