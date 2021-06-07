@@ -20,11 +20,19 @@
     text-align: center;
 }
 
+.profile__value {
+    color: #fff;
+    background: #212121;
+    border: unset;
+    text-align: end;
+}
+
 .profile__inputs {
     margin-top: 123px;
 }
 
 .profile__input {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding-bottom: 16px;
@@ -37,12 +45,17 @@
 
 .profile__input:last-child {
     border: none;
-    padding-bottom: unset;
     margin-bottom: unset;
 }
 
 .profile__input p {
     margin: 0;
+}
+
+.profile__error {
+    bottom: 3px;
+    right: 0;
+    text-align: end;
 }
 
 .profile__buttons {

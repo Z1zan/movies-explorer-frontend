@@ -109,6 +109,17 @@ code {
 
 }
 
+._unactiveProfile {
+  color: #424242 !important;
+  cursor: unset !important;
+}
+
+._unactiveSubmitBtn {
+  background-color: #424242 !important;
+  color: #fff !important;
+  cursor: unset !important;
+}
+
 ._incorrect {
   color: #EE3465;
 }

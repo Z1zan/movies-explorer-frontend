@@ -1,5 +1,6 @@
 import './Navigation.css';
 import NavMenu from '../NavMenu/NavMenu';
+import { Link, NavLink } from "react-router-dom";
 
 import accountImg from '../../images/accountIcon.svg';
 
@@ -10,16 +11,16 @@ function Navigation() {
         <div className='navigation__container'>
           <ul className='navigation__buttons'>
             <li className='navigation__list'>
-              <a href='/movies' className='navigation__btn navigation__movies-btn navigation__btn_active'>Фильмы</a>
+              <NavLink activeClassName='navigation__btn_active' to='/movies' className='navigation__btn navigation__movies-btn'>Фильмы</NavLink>
             </li>
             <li className='navigation__list'>
-              <a href='/saved-movies' className='navigation__btn navigation__savedMovies-btn'>Сохраннёные фильмы</a>
+              <NavLink activeClassName='navigation__btn_active' to='/saved-movies' className='navigation__btn navigation__savedMovies-btn'>Сохраннёные фильмы</NavLink>
             </li>
           </ul>
-          <a className='navigation__profile' href='/profile'>
+          <NavLink activeClassName='navigation__btn_active' className='navigation__profile' to='/profile'>
             <img src={accountImg} alt='аккаунт' />
             Аккаунт
-          </a>
+          </NavLink>
         </div>
       </div>
       <NavMenu />

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import './NavMenu.css';
 import accountImg from '../../images/accountIcon.svg';
+import {NavLink, Link} from "react-router-dom";
 
 function NavMenu(
 ) {
@@ -26,19 +27,19 @@ function NavMenu(
         <button className='navMenu__close-btn' type='button' onClick={closeNavMenu}/>
         <ul className='navMenu__buttons'>
           <li className='navMenu__list'>
-            <a href='/'>Главная</a>
+            <NavLink activeClassName='_activePage' to='/'>Главная</NavLink>
           </li>
           <li className='navMenu__list'>
-            <a className='_activePage' href='/movies'>Фильмы</a>
+            <NavLink activeClassName='_activePage' to='/movies'>Фильмы</NavLink>
           </li>
           <li className='navMenu__list'>
-            <a href='/saved-movies'>Сохранённые фильмы</a>
+            <NavLink activeClassName='_activePage' to='/saved-movies'>Сохранённые фильмы</NavLink>
           </li>
         </ul>
-        <a className='navMenu__profile' href='/profile'>
+        <Link className='navMenu__profile' to='/profile'>
           <img src={accountImg} alt='аккаунт' />
           Аккаунт
-        </a>
+        </Link>
       </div>
       <div className={`navMenu__overlay ${isNavMenuOpen ? '_open-navMenu' : ''}`} onClick={closeNavMenu}/>
     </div>

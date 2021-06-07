@@ -2,15 +2,30 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 import './SavedMovies.css';
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
-function SavedMovies({ place }) {
+function SavedMovies(props) {
   return (
-    <div className='savedMovies'>
-      <SearchForm />
-      <MoviesCardList
-        place={place}
-      />
-    </div>
+    <>
+      <Header loggedIn={props.loggedIn} />
+      <div className='savedMovies'>
+        <SearchForm
+          movies={props.localStorageMovies}
+          savedMovies={props.savedMovies}
+          handleSearchMovies={props.handleSearchMovies}
+          place={props.place}
+        />
+        <MoviesCardList
+          place={props.place}
+          movies={props.movies}
+          savedMovies={props.savedMovies}
+          deleteSavedMovie={props.deleteSavedMovie}
+          movieSearchList={props.movieSearchList}
+        />
+      </div>
+      <Footer />
+    </>
   )
 }
 
