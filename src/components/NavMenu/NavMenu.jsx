@@ -27,7 +27,7 @@ function NavMenu(
         <button className='navMenu__close-btn' type='button' onClick={closeNavMenu}/>
         <ul className='navMenu__buttons'>
           <li className='navMenu__list'>
-            <NavLink activeClassName='_activePage' to='/landing'>Главная</NavLink>
+            <NavLink activeClassName='_activePage' to='/'>Главная</NavLink>
           </li>
           <li className='navMenu__list'>
             <NavLink activeClassName='_activePage' to='/movies'>Фильмы</NavLink>
