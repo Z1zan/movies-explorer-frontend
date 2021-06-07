@@ -34,9 +34,8 @@ function Movies(props) {
 
   function handleMovies() {
     setMoviesCards(moviesCards + moviesCardsMore);
-    console.log('ee', moviesCards);
   }
-  console.log('123', props.localStorageMovies === null);
+  console.log('123', props.movieSearchList);
   return (
     <>
       <Header loggedIn={props.loggedIn}/>

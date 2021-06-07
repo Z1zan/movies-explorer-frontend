@@ -17,7 +17,7 @@ function MoviesCardList(props) {
                   return (
                     <MoviesCard
                       movie={movie}
-                      key={movie.id}
+                      key={movie.id === undefined ? movie.movieId : movie.id}
                       {...movie}
                       place={props.place}
                       handleSaveMovie={props.handleSaveMovie}
