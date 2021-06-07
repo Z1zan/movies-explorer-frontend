@@ -8,7 +8,7 @@ function Header(props) {
 
   return(
     <header className={`header ${ props.loggedIn ? '_hideContainer' : '_hideNav'} `}>
-      <Link className='header__logo _logo' to='/landing'>
+      <Link className='header__logo _logo' to='/'>
         <img src={logo} alt='Диплом Лого' />
       </Link>
       <div className='header__container'>

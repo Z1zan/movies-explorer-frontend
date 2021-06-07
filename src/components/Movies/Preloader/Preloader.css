@@ -1,0 +1,26 @@
+@keyframes preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.preloader__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader__img {
+    width: 10%;
+    animation: preloader 10s infinite;
+}
+
+@media screen and (max-width: 641px) {
+    .preloader__img {
+        width: 20%;
+    }
+}

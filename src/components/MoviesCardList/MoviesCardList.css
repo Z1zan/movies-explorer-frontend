@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+.movies-list__error {
+    text-align: center;
+    width: 100%;
+}
+
 @media screen and (max-width: 641px) {
     .movies-list {
         margin-top: 40px;

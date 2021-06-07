@@ -30,8 +30,21 @@ function App() {
   const [savedMovies, setSavedMovies] = useState([]);
   const localStorageMovies = JSON.parse(localStorage.getItem('movies'));
 
+  const [movieSearchList, setMovieSearchList] = useState([])
+  const [savedMovieSearchList, setSavedMovieSearchList] = useState([])
+
+  const [preloader, setPreloader] = useState(false);
+
   const [currentUser, setCurrentUser] = useState({});
   const history = useHistory();
+
+  function handleSearchMovies(list) {
+    setMovieSearchList(list)
+  }
+
+  function handleSearchSavedMovies(list) {
+    setSavedMovieSearchList(list)
+  }
 
   useEffect(() => {
     if (localStorage.loggedIn === 'true') {
@@ -68,6 +81,7 @@ function App() {
         setUserName(item.name)
         setLoggedIn(true);
         history.push('./movies');
+        getAllMovies();
       })
       .then(() => {
         api
@@ -94,6 +108,7 @@ function App() {
       .catch((err) => console.log(err))
   }
 
+//изменение информации профиля
   function handleChangeProfile(data) {
     api
       .setUserInfo(data)
@@ -110,20 +125,40 @@ function App() {
       .catch(err => console.log(err));
   }
 
-// Получение всех фильмов
-  useEffect(() => {
-    if (localStorage.loggedIn === 'true' && !localStorage.movies) {
+  function getAllMovies() {
+    if (localStorage.loggedIn === 'true' && !localStorage.getItem('movies')) {
+      setPreloader(true);
       apiMovies
         .getMovies()
         .then((data) => {
-          localStorage.setItem('movies', JSON.stringify(data))
+          localStorage.setItem('movies', JSON.stringify(data));
+          setPreloader(false);
           setMovies(data);
         })
         .catch((err) => {
+          setPreloader(false);
           console.log('ошибка', err);
         })
     }
-  }, [])
+  }
+
+// Получение всех фильмов
+//   useEffect(() => {
+//     if (localStorage.loggedIn === 'true' && !localStorage.getItem('movies')) {
+//       setPreloader(true);
+//       apiMovies
+//         .getMovies()
+//         .then((data) => {
+//           localStorage.setItem('movies', JSON.stringify(data));
+//           setPreloader(false);
+//           setMovies(data);
+//         })
+//         .catch((err) => {
+//           setPreloader(false);
+//           console.log('ошибка', err);
+//         })
+//     }
+//   }, [])
 // Получение сохранненых фильмов
   useEffect(() => {
     if (localStorage.loggedIn === 'true') {
@@ -135,6 +170,7 @@ function App() {
         .catch((err) => console.log(err))
     }
   }, [])
+
 //сохранение фильма
   function handleSaveMovie(movie) {
     if (movie.nameRU !== savedMovies.some((item) => item.nameRU)) {
@@ -146,6 +182,7 @@ function App() {
         .catch((err) => console.log(err));
     }
   }
+
 //удаление фильма из избраного
   function deleteSavedMovie(movieId) {
     api
@@ -181,6 +218,8 @@ function App() {
             savedMovies={savedMovies}
             movies={movies}
             deleteSavedMovie={deleteSavedMovie}
+            handleSearchMovies={handleSearchSavedMovies}
+            movieSearchList={savedMovieSearchList}
           />
 
           <ProtectedRoute
@@ -193,6 +232,9 @@ function App() {
             handleSaveMovie={handleSaveMovie}
             deleteSavedMovie={deleteSavedMovie}
             localStorageMovies={localStorageMovies}
+            preloader={preloader}
+            handleSearchMovies={handleSearchMovies}
+            movieSearchList={movieSearchList}
           />
 
           <Route path='/signup'>
@@ -203,7 +245,7 @@ function App() {
             <Login onLogin={handleLogin}/>
           </Route>
 
-          <Route path='/landing'>
+          <Route exact path='/'>
             <section className='landing'>
               <Header
                 loggedIn={loggedIn}
@@ -213,9 +255,9 @@ function App() {
             </section>
           </Route>
 
-          <Route exact path='/'>
-            {loggedIn ? <Redirect to='/movies'/> : <Redirect to='/landing'/>}
-          </Route>
+          {/*<Route exact path='/'>*/}
+          {/*  {loggedIn ? <Redirect to='/movies'/> : <Redirect to='/'/>}*/}
+          {/*</Route>*/}
 
           <Route path='*'>
             <NotFound/>

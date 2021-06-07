@@ -10,12 +10,18 @@ function SavedMovies(props) {
     <>
       <Header loggedIn={props.loggedIn} />
       <div className='savedMovies'>
-        <SearchForm />
+        <SearchForm
+          movies={props.localStorageMovies}
+          savedMovies={props.savedMovies}
+          handleSearchMovies={props.handleSearchMovies}
+          place={props.place}
+        />
         <MoviesCardList
           place={props.place}
           movies={props.movies}
           savedMovies={props.savedMovies}
           deleteSavedMovie={props.deleteSavedMovie}
+          movieSearchList={props.movieSearchList}
         />
       </div>
       <Footer />
